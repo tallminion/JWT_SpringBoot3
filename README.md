@@ -66,5 +66,31 @@ public class HomeController {
     }
 }
 ```
-## Implement user with UserDetailService Bean
+- If inMemory user is not created, default password is provided by `spring-security` dependency.
+### custom username and password 
+- can be created by the below code in `application.properties`. 
+- For plain text passwords, use `{noop}` in front of the password.
+```
+spring.security.user.name=<username>
+spring.security.user.password={noop}<password>
+```
+## Implement inMemory user with UserDetailService Bean
+- If we want to use encoded passwords,we must encode the password correctly and configure Spring Security to use the correct encoder.
+- here `BCrypt` password encorder is implemented.
+```
+@Configuration
+public class AppConfig {
+    @Bean
+    public UserDetailsService userDetailsService(){
+        UserDetails user =  User.builder().username(<username>).password(passwordEncoder().encode(<passoword>)).roles(<role>).build();
+        return new InMemoryUserDetailsManager(user);
+    }
+
+    @Bean
+    public PasswordEncoder passwordEncoder(){
+        return new BCryptPasswordEncoder();
+    }
+}
+```
+
 
