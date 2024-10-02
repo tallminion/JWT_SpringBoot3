@@ -1,5 +1,6 @@
 package com.minion.jwt.controllers;
 
+import java.security.Principal;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,12 +17,15 @@ public class HomeController {
     @Autowired
     private UserService userService;
 
-
-
     //http://localhost:8081/home/users
     @GetMapping("/users")
     public List<User> getUser(){
         System.out.println("getting users");
         return this.userService.getUsers();
+    }
+
+    @GetMapping("/Current-User")
+    public String currentUser(Principal principal){
+        return principal.getName();
     }
 }
