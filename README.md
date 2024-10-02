@@ -114,6 +114,16 @@ The `JWThelper` class facilitates the generation, validation, and management of 
 
 **NOTE:** ``` Claims can provide a comprehensive view of a user's identity, roles, permissions, and session-related information, which are critical for authentication and authorization processes in your application.```
 
+## Implement JWT authentication filter to validate and authenticate users based on Bearer token in the request header.
+- Bearer token example:->  `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3`
+**5 important logic**
+1. Get Token from request
+2. Validate Token
+3. GetUsername from token
+4. Load user associated with this token
+5. set authentication
+
+
 
 
 
