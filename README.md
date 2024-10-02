@@ -104,6 +104,16 @@ public class AppConfig {
         writer.println("Access Denied !! " + authException.getMessage());
     }
 ```
+## Add JWT helper class for token generation, validation, and claims extraction using HS512 algorithm with secure key management.
+The `JWThelper` class facilitates the generation, validation, and management of JSON Web Tokens (JWT) in a secure manner.
+
+### Features
+- **Token Generation:** Generate JWTs for authenticated users with configurable claims.
+- **Token Validation:** Validate tokens to ensure they are not expired and belong to the correct user.
+- **Claims Extraction:** Retrieve claims such as the username and expiration date from the token.
+
+
+
 
 
 # to be continued...😊
