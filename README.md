@@ -112,6 +112,7 @@ The `JWThelper` class facilitates the generation, validation, and management of 
 - **Token Validation:** Validate tokens to ensure they are not expired and belong to the correct user.
 - **Claims Extraction:** Retrieve claims such as the username and expiration date from the token.
 
+**NOTE:** ``` Claims can provide a comprehensive view of a user's identity, roles, permissions, and session-related information, which are critical for authentication and authorization processes in your application.```
 
 
 
