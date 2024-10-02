@@ -93,6 +93,19 @@ public class AppConfig {
 }
 ```
 
+## Create JWT-Athentication-EntryPoint Class 
+- JWTauthenticationEntryPoint class implements AuthenticationEntryPoint.
+- Method of this class is called whenever an exception is thrown due to unauthenticated user trying to access the resource that required authentication.
+```
+@Override 
+    public void commence(HttpServletRequest request, HttpServletResponse response, AuthenticationException authException) throws IOException, ServletException {
+        response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+        PrintWriter writer = response.getWriter();
+        writer.println("Access Denied !! " + authException.getMessage());
+    }
+```
+
+
 # to be continued...😊
 
 
